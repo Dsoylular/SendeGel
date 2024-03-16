@@ -32,24 +32,31 @@ class HomeWidget extends StatelessWidget {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 15),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.purple), // border color
                 borderRadius: BorderRadius.circular(20), // border radius
+                gradient: const LinearGradient(
+                  colors: [Colors.deepPurple, Colors.purple],
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ),
               ),
               child: const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Planlanmış Gezilerim",
-                    style: TextStyle(
-                      color: Colors.purple, // text color
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                  child: Center(
+                    child: Text(
+                      "Planlanmış Gezilerim",
+                      style: TextStyle(
+                        color: Colors.white, // text color
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
+
 
             const SizedBox(height: 10),
             SizedBox(
@@ -71,19 +78,21 @@ class HomeWidget extends StatelessWidget {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 15),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.purple), // border color
-                borderRadius: BorderRadius.circular(20), // border radius
+                gradient: const LinearGradient(colors: [Colors.deepPurple, Colors.purple]), // gradient colors
+                borderRadius: BorderRadius.circular(20),
               ),
               child: const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Organize Ettiğim Geziler",
-                    style: TextStyle(
-                      color: Colors.purple, // text color
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                  child: Center(
+                    child: Text(
+                      "Organize Ettiğim Geziler",
+                      style: TextStyle(
+                        color: Colors.white, // text color changed to white for better visibility
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
                     ),
                   ),
                 ),
@@ -105,6 +114,31 @@ class HomeWidget extends StatelessWidget {
                 ),
               ),
             ),
+            Container(
+              width: 50, // Adjust width as needed
+              height: 50, // Adjust height as needed
+              decoration: BoxDecoration(
+                shape: BoxShape.circle, // Makes the container circular
+                gradient: LinearGradient(
+                  colors: [Colors.purple.withOpacity(0.7), Colors.purple.withOpacity(0.4)],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+                border: Border.all(color: Colors.black, width: 2), // Border color and width
+              ),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.zero, // Remove padding
+                  shape: CircleBorder(), // Makes the button circular
+                  backgroundColor: Colors.transparent, // Transparent background
+                  foregroundColor: Colors.black, // Text color
+                ),
+                child: Icon(Icons.add),
+              ),
+            ),
+
+
           ],
         ),
       ),

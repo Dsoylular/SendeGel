@@ -11,20 +11,26 @@ class EventButton extends StatelessWidget {
       width: 350,
       height: 45,
       decoration: BoxDecoration(
-        gradient: const LinearGradient(colors: [Colors.deepPurple, Colors.purple]),
+        color: Colors.transparent,
         borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.purple, width: 2.5),
       ),
       child: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
-          foregroundColor: Colors.white,
+          foregroundColor: Colors.purple,
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
         ),
-        child: Text(buttonText),
+        child: Text(
+            buttonText,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }
