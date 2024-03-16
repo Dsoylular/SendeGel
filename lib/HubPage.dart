@@ -1,5 +1,5 @@
 import 'package:appjamteam39/EventPage.dart';
-import 'package:appjamteam39/HomePage.dart';
+import 'package:appjamteam39/HubPageFiles/HomePage.dart';
 import 'package:appjamteam39/ProfilePage.dart';
 import 'package:flutter/material.dart';
 
