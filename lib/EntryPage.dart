@@ -32,15 +32,12 @@ class _EntryState extends State<EntryPage> {
 
   @override
   Widget build(BuildContext context) {
+
     final Size screenSize = MediaQuery.of(context).size;
-
-    final double headerHeightRatio = 0.4;
-
-    final double spacingRatio = 0.04;
-
-    final double inputWidthRatio = 0.8;
-
-    final double inputHeightRatio = 0.07;
+    const double headerHeightRatio = 0.4;
+    const double spacingRatio = 0.04;
+    const double inputWidthRatio = 0.8;
+    const double inputHeightRatio = 0.07;
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -61,7 +58,7 @@ class _EntryState extends State<EntryPage> {
               ),
               child: Center(
                 child: Text(
-                  "Sende Gel",
+                  "SendeGel",
                   style: TextStyle(
                     fontSize: screenSize.width * 0.1,
                     fontWeight: FontWeight.bold,
