@@ -16,7 +16,9 @@ class EventButton extends StatelessWidget {
         border: Border.all(color: Colors.purple, width: 2.5),
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          // TODO: GEZİ DETAYLARININ VE CHATİN GÖZÜKTÜĞÜ EKRANA BAĞLAMA NOKTASI
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           foregroundColor: Colors.purple,

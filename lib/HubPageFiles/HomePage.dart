@@ -9,7 +9,7 @@ class HomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> attendedItems = [
-      'Gezi 1',
+      'Gezi 1', //Örnek katılanacak geziler
       'Gezi 2',
       'Gezi 3',
       'Gezi 4',
@@ -17,7 +17,7 @@ class HomeWidget extends StatelessWidget {
       'Gezi 6',
     ];
     List<String> organizedItems = [
-      'Organize 1',
+      'Organize 1', //Örnek düzenlenen geziler
       'Organize 2',
       'Organize 3',
       'Organize 4',
@@ -98,11 +98,12 @@ class HomeWidget extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             SizedBox(
               height: 200,
               child: attendedItems.isEmpty
                   ? Center(child: Container(child: Text('Planlanmış geziniz yok, eklemek için tıklayın')))
+                  // TODO: BURADAKİ ETKİNLİK OLMAYINCA GELEN MESAJ GÜZELLEŞTİRİLEBİLİR
                   : Scrollbar(
                 thumbVisibility: true,
                 child: ListView(
@@ -114,31 +115,38 @@ class HomeWidget extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              width: 50, // Adjust width as needed
-              height: 50, // Adjust height as needed
-              decoration: BoxDecoration(
-                shape: BoxShape.circle, // Makes the container circular
-                gradient: LinearGradient(
-                  colors: [Colors.purple.withOpacity(0.7), Colors.purple.withOpacity(0.4)],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                  width: 50, // Adjust width as needed
+                  height: 50, // Adjust height as needed
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle, // Makes the container circular
+                    gradient: LinearGradient(
+                      colors: [Colors.purple, Colors.purple.withOpacity(0.75)],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+                    border: Border.all(color: Colors.black, width: 2), // Border color and width
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // TODO: YENİ ETKİNLİK OLUŞTUR EKRANI BURAYA BAĞLANMALI
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.zero, // Remove padding
+                      shape: const CircleBorder(), // Makes the button circular
+                      backgroundColor: Colors.transparent, // Transparent background
+                      foregroundColor: Colors.black, // Text color
+                    ),
+                    child: const Icon(Icons.add),
+                  ),
                 ),
-                border: Border.all(color: Colors.black, width: 2), // Border color and width
-              ),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.zero, // Remove padding
-                  shape: CircleBorder(), // Makes the button circular
-                  backgroundColor: Colors.transparent, // Transparent background
-                  foregroundColor: Colors.black, // Text color
-                ),
-                child: Icon(Icons.add),
-              ),
+                const SizedBox(width: 20),
+              ],
             ),
-
-
           ],
         ),
       ),

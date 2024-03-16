@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class HomePage extends StatefulWidget {
   final String argument;
 
-  const HomePage({Key? key, required this.argument}) : super(key: key);
+  const HomePage({super.key, required this.argument});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -50,7 +50,21 @@ class _HomePageState extends State<HomePage> {
         ),
         toolbarHeight: 75,
         centerTitle: false, // Center the title
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.settings,
+              size: 25, // Adjust the size as needed
+              color: Colors.white, // Make the icon white
+            ),
+            onPressed: () {
+              // TODO: SETTINGS EKRANINA GEÇİŞ BURAYA YAZILACAK
+            },
+          ),
+        ],
       ),
+
+
       body: Center(
         // child: Text(widget.argument),
         child: tabs[_currentIndex],
@@ -76,17 +90,6 @@ class _HomePageState extends State<HomePage> {
           setState(() {
             _currentIndex = index;
           });
-          switch (index) {
-            case 0:
-            // TODO: Navigate to EventBul
-              break;
-            case 1:
-            // TODO: Navigate to ANA EKRAN
-              break;
-            case 2:
-            // TODO: Navigate to Profile
-              break;
-          }
         },
       ),
     );

@@ -11,7 +11,7 @@ class ProfileWidget extends StatelessWidget {
         body: Column(
           children: [
             Center(child: Text("Profil Sayfasına geldin!")),
-            // TODO: BURASI TASARLANACAK
+            // TODO: PROFİL SAYFASI BURADA TASARLANACAK!
           ],
         )
     );

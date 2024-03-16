@@ -1,10 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
 import 'HubPage.dart';
 
 class EntryPage extends StatefulWidget {
-  const EntryPage({Key? key}) : super(key: key);
+  const EntryPage({super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -79,7 +78,7 @@ class _EntryState extends State<EntryPage> {
               ),
               child: TextField(
                 controller: _emailController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Email',
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.zero,
@@ -98,7 +97,7 @@ class _EntryState extends State<EntryPage> {
               ),
               child: TextField(
                 controller: _passwordController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Password',
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.zero,
@@ -155,8 +154,7 @@ class _EntryState extends State<EntryPage> {
                     ),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
-                        // print("register");
-                        // TODO: Register ekranına yönlendirme yapılacak
+                        // TODO: Register ekranına yönlendirme yapılacak. Ayrı bir Register.dart file açıp onu kullanalım
                       },
                   ),
                 ],
