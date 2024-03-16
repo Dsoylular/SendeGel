@@ -1,5 +1,5 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
 
 class EntryPage extends StatefulWidget {
   const EntryPage({Key? key}) : super(key: key);
@@ -13,30 +13,38 @@ class EntryPage extends StatefulWidget {
 class _EntryState extends State<EntryPage> {
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+
+    final double headerHeightRatio = 0.4;
+
+    final double spacingRatio = 0.04;
+
+    final double inputWidthRatio = 0.8;
+
+    final double inputHeightRatio = 0.07;
+
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            width: double.infinity,
-            height: 350,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.deepPurple,
-                  Colors.purple,
-                ],
-              ),
-            ),
-            child: const SizedBox(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
               width: double.infinity,
-              height: 350,
+              height: screenSize.height * headerHeightRatio,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.deepPurple,
+                    Colors.purple,
+                  ],
+                ),
+              ),
               child: Center(
                 child: Text(
                   "Sende Gel",
                   style: TextStyle(
-                    fontSize: 40.0,
+                    fontSize: screenSize.width * 0.1,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontStyle: FontStyle.italic,
@@ -44,17 +52,14 @@ class _EntryState extends State<EntryPage> {
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 40),
-
-          Center(
-            child: Container(
-              width: 300,
-              height: 60,
-              padding: EdgeInsets.all(10),
+            SizedBox(height: screenSize.height * (spacingRatio*2)),
+            Container(
+              width: screenSize.width * inputWidthRatio,
+              height: screenSize.height * inputHeightRatio,
+              padding: EdgeInsets.all(screenSize.width * 0.02),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(screenSize.width * 0.1),
               ),
               child: const TextField(
                 decoration: InputDecoration(
@@ -65,17 +70,14 @@ class _EntryState extends State<EntryPage> {
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 20),
-
-          Center(
-            child: Container(
-              width: 300,
-              height: 60,
-              padding: EdgeInsets.all(10),
+            SizedBox(height: screenSize.height * spacingRatio),
+            Container(
+              width: screenSize.width * inputWidthRatio,
+              height: screenSize.height * inputHeightRatio,
+              padding: EdgeInsets.all(screenSize.width * 0.02),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(screenSize.width * 0.1),
               ),
               child: const TextField(
                 decoration: InputDecoration(
@@ -86,53 +88,55 @@ class _EntryState extends State<EntryPage> {
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 100),
-
-          Center(
-            child: ElevatedButton(
-                onPressed: () {
-                //TODO:  HERE SHOULD BE FILLED!!!!!
-                },
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 130, vertical: 15
-                  ),
-                  backgroundColor: Colors.purple,
+            SizedBox(height: screenSize.height * (spacingRatio * 3)),
+            ElevatedButton(
+              onPressed: () {
+                //TODO: Implement login functionality
+              },
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(
+                    horizontal: screenSize.width * 0.35,
+                    vertical: screenSize.width * 0.04
                 ),
-                child: const Text(
-                    "LOGIN",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-            ),
-          ),
-          const SizedBox(height: 90),
-
-          RichText(
-            text: const TextSpan(
-              style: TextStyle(
-                fontSize: 16.0,
-                color: Colors.black,
+                backgroundColor: Colors.purple,
               ),
-              children: <TextSpan>[
-                TextSpan(
-                  text: "Don't have an account ? ",
+              child: const Text(
+                "LOGIN",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
-                TextSpan(
-                  text: 'Register',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.purple,
-                  ),
-                ),
-              ],
+              ),
             ),
-          )
+            SizedBox(height: screenSize.height * (spacingRatio * 2.4)),
+            RichText(
+              text: TextSpan(
+                style: TextStyle(
+                  fontSize: screenSize.width * 0.05,
+                  color: Colors.black,
+                ),
+                children: <TextSpan>[
+                  const TextSpan(
+                    text: "Don't have an account ? ",
+                  ),
+                  TextSpan(
+                    text: 'Register',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.purple,
+                      decoration: TextDecoration.underline,
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        // TODO: Register ekranına yönlendirme yapılacak
+                      },
+                  ),
+                ],
+              ),
+            )
 
-        ],
+          ],
+        ),
       ),
     );
   }
