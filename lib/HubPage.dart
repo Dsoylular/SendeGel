@@ -50,6 +50,16 @@ class _HomePageState extends State<HomePage> {
         ),
         toolbarHeight: 75,
         centerTitle: false, // Center the title
+        leading: IconButton(
+          icon: const Icon(
+            Icons.exit_to_app,
+            size: 25, // Adjust the size as needed
+            color: Colors.white, // Make the icon white
+          ),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
         actions: [
           IconButton(
             icon: const Icon(
@@ -63,6 +73,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+
+
 
 
       body: Center(

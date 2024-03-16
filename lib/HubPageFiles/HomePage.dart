@@ -124,8 +124,8 @@ class HomeWidget extends StatelessWidget {
                   height: 50, // Adjust height as needed
                   decoration: BoxDecoration(
                     shape: BoxShape.circle, // Makes the container circular
-                    gradient: LinearGradient(
-                      colors: [Colors.purple, Colors.purple.withOpacity(0.75)],
+                    gradient: const LinearGradient(
+                      colors: [Colors.deepPurple, Colors.purpleAccent],
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                     ),
@@ -139,7 +139,7 @@ class HomeWidget extends StatelessWidget {
                       padding: EdgeInsets.zero, // Remove padding
                       shape: const CircleBorder(), // Makes the button circular
                       backgroundColor: Colors.transparent, // Transparent background
-                      foregroundColor: Colors.black, // Text color
+                      foregroundColor: Colors.white, // Text color
                     ),
                     child: const Icon(Icons.add),
                   ),
