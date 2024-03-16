@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'HomePage.dart';
+import 'HubPage.dart';
 
 class EntryPage extends StatefulWidget {
   const EntryPage({Key? key}) : super(key: key);

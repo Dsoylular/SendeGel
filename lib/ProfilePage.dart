@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class HomeWidget extends StatelessWidget {
+class ProfileWidget extends StatelessWidget {
   final String text;
 
-  const HomeWidget({Key? key, required this.text}) : super(key: key);
+  const ProfileWidget({Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
         body: Column(
           children: [
-            Center(child: Text("Ana Sayfaya geldin!")),
+            Center(child: Text("Profil Sayfasına geldin!")),
             // TODO: BURASI TASARLANACAK
           ],
         )
