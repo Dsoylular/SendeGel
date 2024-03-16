@@ -91,7 +91,7 @@ class _EntryState extends State<EntryPage> {
             SizedBox(height: screenSize.height * (spacingRatio * 3)),
             ElevatedButton(
               onPressed: () {
-                //TODO: Implement login functionality
+                //TODO: Ana ekrana geçiş
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(
@@ -118,16 +118,21 @@ class _EntryState extends State<EntryPage> {
                 children: <TextSpan>[
                   const TextSpan(
                     text: "Don't have an account ? ",
+                    style: TextStyle(
+                      fontSize: 15,
+                    )
                   ),
                   TextSpan(
                     text: 'Register',
                     style: const TextStyle(
+                      fontSize: 15,
                       fontWeight: FontWeight.bold,
                       color: Colors.purple,
                       decoration: TextDecoration.underline,
                     ),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
+                        // print("register");
                         // TODO: Register ekranına yönlendirme yapılacak
                       },
                   ),
