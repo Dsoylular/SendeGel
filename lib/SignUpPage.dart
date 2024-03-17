@@ -92,32 +92,34 @@ final _formKey = GlobalKey<FormState>();
               child: const Text('Kayıt Ol'),
             ),
             SizedBox(height: 10.0),
-            RichText(
-              text: TextSpan(
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.black,
-                ),
-                children: <TextSpan>[
-                  const TextSpan(
-                      text: "Hesabın var mı? ",
-                      style: TextStyle(
-                        fontSize: 15,
-                      )),
-                  TextSpan(
-                    text: 'Giriş yap',
-                    style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.purple,
-                      decoration: TextDecoration.underline,
-                    ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        Navigator.pop(context);
-                      },
+            Center(
+              child: RichText(
+                text: TextSpan(
+                  style: const TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
                   ),
-                ],
+                  children: <TextSpan>[
+                    const TextSpan(
+                        text: "Hesabın var mı? ",
+                        style: TextStyle(
+                          fontSize: 15,
+                        )),
+                    TextSpan(
+                      text: 'Giriş yap',
+                      style: const TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.purple,
+                        decoration: TextDecoration.underline,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.pop(context);
+                        },
+                    ),
+                  ],
+                ),
               ),
             )
           ],

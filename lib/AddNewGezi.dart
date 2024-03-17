@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Chat.dart';
+
 class GeziWidget extends StatelessWidget {
   final String text;
 
@@ -15,7 +17,7 @@ class GeziWidget extends StatelessWidget {
           },
         ),
         title: const Align(
-          alignment: Alignment.center,
+          alignment: Alignment.centerRight,
           child: Text(
             'SendeGel',
             style: TextStyle(
@@ -93,7 +95,7 @@ class GeziWidget extends StatelessWidget {
               height: 5,
               width: double.infinity
           ),
-          const SizedBox(height: 25),
+          const SizedBox(height: 15),
           Row(
             children: [
               const SizedBox(width: 20),
@@ -183,7 +185,13 @@ class GeziWidget extends StatelessWidget {
               const Text("19"),
             ],
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 15),
+          Container(
+              color: Colors.purple,
+              height: 5,
+              width: double.infinity
+          ),
+          const SizedBox(height: 15),
           Container(
             width: 50, // Adjust width as needed
             height: 50, // Adjust height as needed
@@ -198,7 +206,10 @@ class GeziWidget extends StatelessWidget {
             ),
             child: ElevatedButton(
               onPressed: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ChatWidget(text: "text")),
+                );
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.zero, // Remove padding
