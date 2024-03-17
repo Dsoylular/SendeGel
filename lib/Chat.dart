@@ -61,7 +61,7 @@ class _ChatWidgetState extends State<ChatWidget> {
         centerTitle: false, // Center the title
         leading: IconButton(
           icon: const Icon(
-            Icons.exit_to_app,
+            Icons.arrow_back,
             size: 25, // Adjust the size as needed
             color: Colors.white, // Make the icon white
           ),
