@@ -8,7 +8,7 @@ class GeziWidget extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           color: Colors.white, // Change the color of the back button here
           onPressed: () {
             Navigator.pop(context);
@@ -46,7 +46,7 @@ class GeziWidget extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           Center(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20), // Adjust the radius to your preference
@@ -93,7 +93,7 @@ class GeziWidget extends StatelessWidget {
               height: 5,
               width: double.infinity
           ),
-          SizedBox(height: 25),
+          const SizedBox(height: 25),
           Row(
             children: [
               const SizedBox(width: 20),
@@ -120,10 +120,10 @@ class GeziWidget extends StatelessWidget {
               ),
 
               const SizedBox(width: 30),
-              Text("Deniz Soylular"),
+              const Text("Deniz Soylular"),
             ],
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Row(
             children: [
               const SizedBox(width: 20),
@@ -150,10 +150,10 @@ class GeziWidget extends StatelessWidget {
               ),
 
               const SizedBox(width: 30),
-              Text("Kadıköy"),
+              const Text("Kadıköy"),
             ],
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Row(
             children: [
               const SizedBox(width: 20),
@@ -180,10 +180,10 @@ class GeziWidget extends StatelessWidget {
               ),
 
               const SizedBox(width: 30),
-              Text("19"),
+              const Text("19"),
             ],
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Container(
             width: 50, // Adjust width as needed
             height: 50, // Adjust height as needed
