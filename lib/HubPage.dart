@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
       const EventWidget(text: "text"),
       const HomeWidget(text: "text"),
       const ProfileWidget(text: "text"),
+      // ProfilePage(name: "name", surName: "surName", gender: "gender", email: "email", password: "password"),
     ];
 
     return Scaffold(
@@ -78,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SettingsWidget(text: "text")),
+                  MaterialPageRoute(builder: (context) => const SettingsWidget(text: "text")),
                 );
               },
             ),
