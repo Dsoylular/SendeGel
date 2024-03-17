@@ -14,7 +14,7 @@ class EntryPage extends StatefulWidget {
 class _EntryState extends State<EntryPage> {
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
-
+// deneme commit
   @override
   void initState() {
     super.initState();
