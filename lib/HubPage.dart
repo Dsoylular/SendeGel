@@ -2,7 +2,7 @@ import 'package:appjamteam39/Settings.dart';
 import 'package:flutter/material.dart';
 
 import 'EventPage.dart';
-import 'HubPageFiles/HomePage.dart';
+import 'HomePageFiles/HomePage.dart';
 import 'ProfilePage.dart';
 
 class HomePage extends StatefulWidget {
@@ -77,7 +77,6 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.white, // Make the icon white
               ),
               onPressed: () {
-                // TODO: SETTINGS EKRANINA GEÇİŞ BURAYA YAZILACAK
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const SettingsWidget(text: "text")),

@@ -7,13 +7,25 @@ class EventWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
         children: [
-          Center(child: Text("Event Bul Sayfasına geldin!")),
+          SizedBox(height: 8),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              ElevatedButton(
+                  onPressed: (){
+                    // TODO: FILTER EKRANINA GİDİLECEK YAZILMASI LAZIM
+                  },
+                  child: Icon(Icons.filter_list),
+              ),
+              SizedBox(width: 8),
+            ],
+          ),
           // TODO: BURASI TASARLANACAK
         ],
-      )
+      ),
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:appjamteam39/HubPageFiles/EventButton.dart';
+import 'package:appjamteam39/HomePageFiles/EventButton.dart';
 import 'package:flutter/material.dart';
 
 class HomeWidget extends StatelessWidget {
