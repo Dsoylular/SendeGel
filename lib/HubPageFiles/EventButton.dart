@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../GeziPage.dart';
+
 class EventButton extends StatelessWidget {
   final String buttonText;
 
@@ -18,6 +20,10 @@ class EventButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           // TODO: GEZİ DETAYLARININ VE CHATİN GÖZÜKTÜĞÜ EKRANA BAĞLAMA NOKTASI
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => GeziWidget(text: "text")),
+          );
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
