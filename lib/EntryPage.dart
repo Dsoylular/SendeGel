@@ -1,3 +1,4 @@
+import 'package:appjamteam39/SignUpPage.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'HubPage.dart';
@@ -31,7 +32,6 @@ class _EntryState extends State<EntryPage> {
 
   @override
   Widget build(BuildContext context) {
-
     final Size screenSize = MediaQuery.of(context).size;
     const double headerHeightRatio = 0.4;
     const double spacingRatio = 0.04;
@@ -114,7 +114,8 @@ class _EntryState extends State<EntryPage> {
 
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => HomePage(argument: email)),
+                  MaterialPageRoute(
+                      builder: (context) => HomePage(argument: email)),
                 );
               },
               style: ElevatedButton.styleFrom(
@@ -154,7 +155,11 @@ class _EntryState extends State<EntryPage> {
                     ),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
-                        // TODO: Register ekranına yönlendirme yapılacak. Ayrı bir Register.dart file açıp onu kullanalım
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignUpPage()),
+                        );
                       },
                   ),
                 ],
