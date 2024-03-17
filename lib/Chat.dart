@@ -81,7 +81,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                   title: Container(
                     padding: const EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
-                      color: Colors.blueAccent, // Set background color to purple
+                      color: Colors.green, // Set background color to purple
                       borderRadius: BorderRadius.circular(20.0), // Set border radius
                     ),
                     child: Column(

@@ -125,7 +125,7 @@ class _SettingsPageState extends State<SettingsPage> {
   AppBar _appbarDesign() {
     return AppBar(
       title: const Align(
-        alignment: Alignment.center,
+        alignment: Alignment.centerRight,
         child: Text(
           'SendeGel',
           style: TextStyle(
