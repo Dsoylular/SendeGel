@@ -1,3 +1,4 @@
+import 'package:appjamteam39/Settings.dart';
 import 'package:flutter/material.dart';
 
 import 'EventPage.dart';
@@ -76,6 +77,10 @@ class _HomePageState extends State<HomePage> {
               ),
               onPressed: () {
                 // TODO: SETTINGS EKRANINA GEÇİŞ BURAYA YAZILACAK
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsWidget(text: "text")),
+                );
               },
             ),
           ],
