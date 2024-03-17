@@ -49,7 +49,7 @@ class GeziWidget extends StatelessWidget {
 
         body: const Column(
           children: [
-            Center(child: Text("Settings Sayfasına geldin!")),
+            Center(child: Text("Gezi sayfasına geldin!")),
             // TODO: SETTINGS SAYFASI BURADA TASARLANACAK!
           ],
         )
