@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../AddNewGezi.dart';
 import '../GeziPage.dart';
 
 class EventButton extends StatelessWidget {

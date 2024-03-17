@@ -1,7 +1,8 @@
+import 'package:appjamteam39/AddNewGezi.dart';
 import 'package:appjamteam39/HomePageFiles/EventButton.dart';
 import 'package:flutter/material.dart';
 
-import '../AddNewGezi.dart';
+import '../GeziPage.dart';
 
 class HomeWidget extends StatelessWidget {
   final String text;
@@ -15,16 +16,12 @@ class HomeWidget extends StatelessWidget {
       'Gezi 2',
       'Gezi 3',
       'Gezi 4',
-      'Gezi 5',
-      'Gezi 6',
     ];
     List<String> organizedItems = [
       'Organize 1', //Örnek düzenlenen geziler
       'Organize 2',
       'Organize 3',
       'Organize 4',
-      'Organize 5',
-      'Organize 6',
     ];
     return Scaffold(
       body: SingleChildScrollView(
@@ -135,7 +132,6 @@ class HomeWidget extends StatelessWidget {
                   ),
                   child: ElevatedButton(
                     onPressed: () {
-                      // TODO: YENİ ETKİNLİK OLUŞTUR EKRANI BURAYA BAĞLANMALI
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => const NewGeziWidget(text: "text")),

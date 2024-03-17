@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class GeziWidget extends StatelessWidget {
+class NewGeziWidget extends StatelessWidget {
   final String text;
 
   @override
@@ -56,5 +56,5 @@ class GeziWidget extends StatelessWidget {
     );
   }
 
-  const GeziWidget({Key? key, required this.text}) : super(key: key);
+  const NewGeziWidget({Key? key, required this.text}) : super(key: key);
 }

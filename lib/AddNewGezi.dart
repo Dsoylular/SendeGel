@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class NewGeziWidget extends StatelessWidget {
+class GeziWidget extends StatelessWidget {
   final String text;
 
   @override
@@ -126,11 +124,95 @@ class NewGeziWidget extends StatelessWidget {
             ],
           ),
           SizedBox(height: 30),
+          Row(
+            children: [
+              const SizedBox(width: 20),
+              Container(
+                width: 170,
+                height: 60,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.purple, // Set border color to purple
+                  ),
+                  borderRadius: BorderRadius.circular(10), // Set border radius to make it a rounded rectangle
+                ),
+                child: const Center(
+                  child: Text(
+                    "Gezilecek Yer",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
 
+              const SizedBox(width: 30),
+              Text("Kadıköy"),
+            ],
+          ),
+          SizedBox(height: 30),
+          Row(
+            children: [
+              const SizedBox(width: 20),
+              Container(
+                width: 170,
+                height: 60,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.purple, // Set border color to purple
+                  ),
+                  borderRadius: BorderRadius.circular(10), // Set border radius to make it a rounded rectangle
+                ),
+                child: const Center(
+                  child: Text(
+                    "Katılımcı sayısı",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(width: 30),
+              Text("19"),
+            ],
+          ),
+          SizedBox(height: 30),
+          Container(
+            width: 50, // Adjust width as needed
+            height: 50, // Adjust height as needed
+            decoration: BoxDecoration(
+              shape: BoxShape.circle, // Makes the container circular
+              gradient: const LinearGradient(
+                colors: [Colors.deepPurple, Colors.purpleAccent],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+              border: Border.all(color: Colors.black, width: 2), // Border color and width
+            ),
+            child: ElevatedButton(
+              onPressed: () {
+
+              },
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.zero, // Remove padding
+                shape: const CircleBorder(), // Makes the button circular
+                backgroundColor: Colors.transparent, // Transparent background
+                foregroundColor: Colors.white, // Text color
+              ),
+              child: const Icon(Icons.chat),
+            ),
+          ),
         ],
       ),
     );
   }
 
-  const NewGeziWidget({super.key, required this.text});
+  const GeziWidget({super.key, required this.text});
 }
