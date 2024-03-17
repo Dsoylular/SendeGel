@@ -1,6 +1,8 @@
 import 'package:appjamteam39/HomePageFiles/EventButton.dart';
 import 'package:flutter/material.dart';
 
+import '../AddNewGezi.dart';
+
 class HomeWidget extends StatelessWidget {
   final String text;
 
@@ -134,6 +136,10 @@ class HomeWidget extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       // TODO: YENİ ETKİNLİK OLUŞTUR EKRANI BURAYA BAĞLANMALI
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const NewGeziWidget(text: "text")),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.zero, // Remove padding
