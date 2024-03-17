@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:appjamteam39/EntryPage.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +22,15 @@ final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(backgroundColor: Colors.purple,
-          title: Text('Kayıt Ol'),
+        appBar: AppBar(
+          backgroundColor: Colors.purple,
+          title: const Text(
+              'Kayıt Ol',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
         ),
         body: Form(
       key: _formKey,
@@ -80,7 +89,7 @@ final _formKey = GlobalKey<FormState>();
                   // Örneğin: _register();
                 }
               },
-              child: Text('Kayıt Ol'),
+              child: const Text('Kayıt Ol'),
             ),
             SizedBox(height: 10.0),
             RichText(
