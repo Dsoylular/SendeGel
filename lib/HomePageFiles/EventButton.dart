@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-
-import '../GeziPage.dart';
+import '../AddNewGezi.dart';
 
 class EventButton extends StatelessWidget {
   final String buttonText;
-
-  const EventButton({Key? key, required this.buttonText}) : super(key: key);
+  final String image;
+  const EventButton({super.key, required this.buttonText, required this.image});
 
   @override
   Widget build(BuildContext context) {
+    String helper = image;
     return Container(
       width: 350,
-      height: 45,
+      height: 100, // Adjust the height according to your image size
       decoration: BoxDecoration(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(20),
@@ -19,25 +19,36 @@ class EventButton extends StatelessWidget {
       ),
       child: ElevatedButton(
         onPressed: () {
-          // TODO: GEZİ DETAYLARININ VE CHATİN GÖZÜKTÜĞÜ EKRANA BAĞLAMA NOKTASI
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => GeziWidget(text: "text")),
+            MaterialPageRoute(builder: (context) => GeziWidget(text: "test", image: helper)),
           );
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
-          foregroundColor: Colors.purple,
+          foregroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
         ),
-        child: Text(
-            buttonText,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            Image.asset(
+              image,
+              fit: BoxFit.cover, // Cover the entire button with the image
+            ),
+            Center(
+              child: Text(
+                buttonText,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white, // Set text color to contrast with the background image
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

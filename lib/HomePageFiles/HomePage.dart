@@ -1,10 +1,12 @@
 import 'package:appjamteam39/HomePageFiles/EventButton.dart';
 import 'package:flutter/material.dart';
 
+import '../GeziPage.dart';
+
 class HomeWidget extends StatelessWidget {
   final String text;
 
-  const HomeWidget({Key? key, required this.text}) : super(key: key);
+  const HomeWidget({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -12,18 +14,26 @@ class HomeWidget extends StatelessWidget {
       'Gezi 1', //Örnek katılanacak geziler
       'Gezi 2',
       'Gezi 3',
-      'Gezi 4',
-      'Gezi 5',
-      'Gezi 6',
     ];
     List<String> organizedItems = [
       'Organize 1', //Örnek düzenlenen geziler
       'Organize 2',
       'Organize 3',
-      'Organize 4',
-      'Organize 5',
-      'Organize 6',
     ];
+    List<String> attendedImages = [
+      'assets/images/img_1.png',
+      'assets/images/img_2.png',
+      'assets/images/img_3.png',
+    ];
+    List<String> organizedImages = [
+      'assets/images/img_4.png',
+      'assets/images/img_5.png',
+      'assets/images/img_6.png',
+    ];
+
+    ScrollController attendedItemsController = ScrollController();
+    ScrollController organizedItemsController = ScrollController();
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -57,20 +67,27 @@ class HomeWidget extends StatelessWidget {
               ),
             ),
 
-
             const SizedBox(height: 10),
             SizedBox(
               height: 200,
               child: attendedItems.isEmpty
-                  ? Center(child: Container(child: Text('Planlanmış geziniz yok, eklemek için tıklayın')))
+                  ? const Center(child: Text('Planlanmış geziniz yok, eklemek için tıklayın'))
                   : Scrollbar(
+                controller: attendedItemsController,
                 thumbVisibility: true,
-                child: ListView(
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  controller: attendedItemsController,
                   shrinkWrap: true,
-                  itemExtent: 55,
-                  children: attendedItems
-                      .map((item) => Center(child: EventButton(buttonText: item)))
-                      .toList(),
+                  itemCount: attendedItems.length,
+                  itemBuilder: (context, index) {
+                    final item = attendedItems[index];
+                    final img = attendedImages[index];
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: EventButton(buttonText: item, image: img),
+                    );
+                  },
                 ),
               ),
             ),
@@ -101,17 +118,24 @@ class HomeWidget extends StatelessWidget {
             const SizedBox(height: 10,),
             SizedBox(
               height: 200,
-              child: attendedItems.isEmpty
-                  ? Center(child: Container(child: Text('Planlanmış geziniz yok, eklemek için tıklayın')))
-                  // TODO: BURADAKİ ETKİNLİK OLMAYINCA GELEN MESAJ GÜZELLEŞTİRİLEBİLİR
+              child: organizedItems.isEmpty
+                  ? const Center(child: Text('Planlanmış geziniz yok, eklemek için tıklayın'))
                   : Scrollbar(
+                controller: organizedItemsController,
                 thumbVisibility: true,
-                child: ListView(
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  controller: organizedItemsController,
                   shrinkWrap: true,
-                  itemExtent: 55,
-                  children: organizedItems
-                      .map((item) => Center(child: EventButton(buttonText: item)))
-                      .toList(),
+                  itemCount: organizedItems.length,
+                  itemBuilder: (context, index) {
+                    final item = organizedItems[index];
+                    final img = organizedImages[index];
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: EventButton(buttonText: item, image: img),
+                    );
+                  },
                 ),
               ),
             ),
@@ -133,7 +157,10 @@ class HomeWidget extends StatelessWidget {
                   ),
                   child: ElevatedButton(
                     onPressed: () {
-                      // TODO: YENİ ETKİNLİK OLUŞTUR EKRANI BURAYA BAĞLANMALI
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const NewGeziWidget(text: "text")),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.zero, // Remove padding

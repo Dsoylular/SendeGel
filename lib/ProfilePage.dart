@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ProfileWidget extends StatelessWidget {
   final String text;
 
-  const ProfileWidget({Key? key, required this.text}) : super(key: key);
+  const ProfileWidget({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ProfileWidget extends StatelessWidget {
               const Center(
                 child: CircleAvatar(
                   maxRadius: 100,
-                  backgroundImage: AssetImage('lib/images/img_1.png'),
+                  backgroundImage: AssetImage('assets/images/img.png'),
                 ),
               ),
 
