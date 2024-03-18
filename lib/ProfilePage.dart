@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ProfileWidget extends StatelessWidget {
   final String text;
 
-  const ProfileWidget({Key? key, required this.text}) : super(key: key);
+  const ProfileWidget({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {

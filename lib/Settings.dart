@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class SettingsPage extends StatefulWidget {
   final TextEditingController geliControl;
 
-  const SettingsPage({Key? key, required this.geliControl}) : super(key: key);
+  const SettingsPage({super.key, required this.geliControl});
 
   @override
   State<SettingsPage> createState() => _SettingsPageState();

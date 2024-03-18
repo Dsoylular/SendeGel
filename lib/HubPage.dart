@@ -8,7 +8,7 @@ import 'ProfilePage.dart';
 class HomePage extends StatefulWidget {
   final String argument;
 
-  const HomePage({Key? key, required this.argument}) : super(key: key);
+  const HomePage({super.key, required this.argument});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -19,7 +19,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
     final tabs = [
       const EventWidget(text: "text"),
       const HomeWidget(text: "text"),
@@ -29,7 +28,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(75.0),
+        preferredSize: const Size.fromHeight(75.0),
         child: AppBar(
           automaticallyImplyLeading: false,
           title: const Align(

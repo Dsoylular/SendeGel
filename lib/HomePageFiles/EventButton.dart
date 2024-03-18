@@ -4,7 +4,7 @@ import '../AddNewGezi.dart';
 class EventButton extends StatelessWidget {
   final String buttonText;
   final String image;
-  const EventButton({Key? key, required this.buttonText, required this.image}) : super(key: key);
+  const EventButton({super.key, required this.buttonText, required this.image});
 
   @override
   Widget build(BuildContext context) {

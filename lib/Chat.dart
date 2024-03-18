@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ChatWidget extends StatefulWidget {
   final String text;
 
-  const ChatWidget({Key? key, required this.text}) : super(key: key);
+  const ChatWidget({super.key, required this.text});
 
   @override
   _ChatWidgetState createState() => _ChatWidgetState();
@@ -123,7 +123,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                   ),
                 ),
                 IconButton(
-                  icon: Icon(Icons.send),
+                  icon: const Icon(Icons.send),
                   onPressed: _sendMessage,
                 ),
               ],

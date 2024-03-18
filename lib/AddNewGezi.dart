@@ -6,7 +6,7 @@ class GeziWidget extends StatelessWidget {
   final String text;
   final String image;
 
-  const GeziWidget({Key? key, required this.text, required this.image}) : super(key: key);
+  const GeziWidget({super.key, required this.text, required this.image});
 
   @override
   Widget build(BuildContext context) {
