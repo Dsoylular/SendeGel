@@ -1,4 +1,4 @@
-import 'package:appjamteam39/SignUpPage.dart' show SignUpPage;
+import 'package:appjamteam39/SignUpPage.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'HubPage.dart';
@@ -158,7 +158,7 @@ class _EntryState extends State<EntryPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const SignUpPage()),
+                              builder: (context) => SignUpPage()),
                         );
                       },
                   ),
