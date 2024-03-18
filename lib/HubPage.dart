@@ -1,5 +1,6 @@
 import 'package:appjamteam39/Settings.dart';
 import 'package:flutter/material.dart';
+
 import 'EventPage.dart';
 import 'HomePageFiles/HomePage.dart';
 import 'ProfilePage.dart';
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     final tabs = [
-      //const EventWidget(),
+      const EventWidget(text: "text"),
       const HomeWidget(text: "text"),
       const ProfileWidget(text: "text"),
       // ProfilePage(name: "name", surName: "surName", gender: "gender", email: "email", password: "password"),
