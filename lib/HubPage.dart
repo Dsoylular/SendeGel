@@ -1,6 +1,5 @@
 import 'package:appjamteam39/Settings.dart';
 import 'package:flutter/material.dart';
-
 import 'EventPage.dart';
 import 'HomePageFiles/HomePage.dart';
 import 'ProfilePage.dart';
@@ -20,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final tabs = [
-      const EventWidget(text: "text"),
+      //const EventWidget(),
       const HomeWidget(text: "text"),
       const ProfileWidget(text: "text"),
       // ProfilePage(name: "name", surName: "surName", gender: "gender", email: "email", password: "password"),

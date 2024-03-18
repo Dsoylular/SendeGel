@@ -72,7 +72,7 @@ final _formKey = GlobalKey<FormState>();
                 return null;
               },
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
@@ -80,12 +80,12 @@ final _formKey = GlobalKey<FormState>();
                   // Örneğin: _register();
                 }
               },
-              child: Text('Kayıt Ol'),
+              child: const Text('Kayıt Ol'),
             ),
             SizedBox(height: 10.0),
             RichText(
               text: TextSpan(
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 15,
                   color: Colors.black,
                 ),
