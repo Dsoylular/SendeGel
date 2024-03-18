@@ -11,7 +11,11 @@ class EntryPage extends StatefulWidget {
   List<Event> events;
   Member currentUser;
 
-  EntryPage({super.key, required this.currentUser, required this.members, required this.events});
+  EntryPage(
+      {super.key,
+        required this.currentUser,
+        required this.members,
+        required this.events});
 
   @override
   State<StatefulWidget> createState() {
@@ -37,6 +41,7 @@ class _EntryState extends State<EntryPage> {
     super.dispose();
   }
 
+  bool obsourceText = true;
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
@@ -104,9 +109,19 @@ class _EntryState extends State<EntryPage> {
               ),
               child: TextField(
                 controller: _passwordController,
-                decoration: const InputDecoration(
+                obscureText: obsourceText,
+                decoration: InputDecoration(
                   hintText: 'Password',
                   border: InputBorder.none,
+                  suffixIcon: InkWell(
+                      onTap: () {
+                        setState(() {
+                          obsourceText = !obsourceText;
+                        });
+                      },
+                      child: Icon(obsourceText
+                          ? Icons.visibility_off
+                          : Icons.visibility)),
                   contentPadding: EdgeInsets.zero,
                   prefixIcon: Icon(Icons.key),
                 ),
@@ -115,11 +130,20 @@ class _EntryState extends State<EntryPage> {
             SizedBox(height: screenSize.height * (spacingRatio * 3)),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => HomePage(currentUser: widget.currentUser, members: members, events: events,)),
-                );
+                if (_passwordController.text.isNotEmpty &&
+                    _emailController.text.isNotEmpty) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => HomePage(
+                          currentUser: widget.currentUser,
+                          members: members,
+                          events: events,
+                        )),
+                  );
+                } else {
+                  _showPopup(context);
+                }
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(
@@ -160,8 +184,7 @@ class _EntryState extends State<EntryPage> {
                       ..onTap = () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => SignUpPage()),
+                          MaterialPageRoute(builder: (context) => SignUpPage()),
                         );
                       },
                   ),
@@ -171,6 +194,26 @@ class _EntryState extends State<EntryPage> {
           ],
         ),
       ),
+    );
+  }
+
+  void _showPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Uyarı!'),
+          content: Text('Lütfen boş alan bırakmayınız'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Kapat'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
