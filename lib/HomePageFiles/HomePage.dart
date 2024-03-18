@@ -1,6 +1,5 @@
 import 'package:appjamteam39/LogicalData/Member.dart';
 import 'package:appjamteam39/LogicalData/Event.dart';
-import 'package:appjamteam39/LogicalData/startDataBase.dart';
 import 'package:flutter/material.dart';
 import '../GeziPage.dart';
 import 'EventButton.dart';
