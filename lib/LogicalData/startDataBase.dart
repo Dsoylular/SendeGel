@@ -200,8 +200,8 @@ void startDataBase() {
   recep.joinEvent(event: e3);
   mustafa.joinEvent(event: e2);
   berat.joinEvent(event: e2);
-  melisa.joinEvent(event: e2);
-  elif.joinEvent(event: e2);
+  melisa.joinEvent(event: e3);
+  elif.joinEvent(event: e4);
   jack.joinEvent(event: e2);
   gulcan.joinEvent(event: e2);
   mehmet.joinEvent(event: e7);

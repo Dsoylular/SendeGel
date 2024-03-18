@@ -1,8 +1,8 @@
 import 'package:appjamteam39/EventPage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:appjamteam39/EntryPage.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
 import 'LogicalData/Event.dart';
 import 'LogicalData/Member.dart';
 import 'LogicalData/startDataBase.dart';
@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: EventWidget(members: members, events: events, currentUser: currentUser),
+      home: Scaffold(
+        body: EventWidget(currentUser: members[5], events: events,members: members,))
     );
   }
 }
