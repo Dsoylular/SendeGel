@@ -1,9 +1,5 @@
-import 'package:appjamteam39/EntryPage.dart';
-import 'package:appjamteam39/EventPage.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:appjamteam39/LoginPage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'LogicalData/Event.dart';
 import 'LogicalData/Member.dart';
 import 'LogicalData/startDataBase.dart';
