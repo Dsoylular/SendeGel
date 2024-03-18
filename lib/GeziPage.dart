@@ -159,7 +159,10 @@ class _AddNewTravelPageState extends State<AddNewTravelPage> {
             style: TextButton.styleFrom(
                 backgroundColor: Colors.deepPurple,
                 fixedSize: const Size(170, 50)),
-            onPressed: _submitForm,
+            onPressed: (){
+              _submitForm;
+              Navigator.pop(context);
+            },
             icon: const Icon(Icons.download_done_rounded, color: Colors.white),
             label: const Text(
               "Kaydet",

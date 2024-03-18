@@ -60,6 +60,10 @@ class EventButton extends StatelessWidget {
                 height: 30,
                 width: 80,
                 decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.deepPurple,
+                    width: 2,
+                  ),
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0), // Adjust the value as needed
                 ),
