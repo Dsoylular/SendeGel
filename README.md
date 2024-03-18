@@ -23,3 +23,11 @@ Sosyal Bağları Güçlendirmek: Kullanıcılar arasında etkileşimi artırarak
 Yeni Yerler Keşfetme İmkanı: Kullanıcıların bulundukları lokasyonlarda yeni yerler keşfetmelerini ve farklı kültürlerle tanışmalarını sağlar.
 #Etkinliklere Kolay Erişim Sağlamak: Kullanıcıların çeşitli etkinliklere kolayca katılmalarını ve düzenlemelerini sağlar.
 SendeGel ile bulunduğunuz bölgenin keyfini çıkarabilir, yeni yerler keşfedebilir ve unutulmaz deneyimler yaşayabilirsiniz. Katılın ve etkinlik dolu bir dünyaya adım atın!
+
+
+flutter --version:
+
+Framework • revision ba39319843 (11 days ago) • 2024-03-07 15:22:21 -0600
+Engine • revision 2e4ba9c6fb
+Tools • Dart 3.3.1 • DevTools 2.31.1
+
