@@ -73,7 +73,7 @@ class _HomeWidgetState extends State<HomeWidget> {
               child: Padding(
                 padding: EdgeInsets.all(screenWidth * 0.025),
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   child: Text(
                     "Planlanmış Gezilerim",
                     style: TextStyle(
@@ -119,7 +119,7 @@ class _HomeWidgetState extends State<HomeWidget> {
               child: Padding(
                 padding: EdgeInsets.all(screenWidth * 0.025),
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   child: Text(
                     "Organize Ettiğim Geziler",
                     style: TextStyle(
