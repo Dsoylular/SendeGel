@@ -78,41 +78,88 @@ class _EventWidgetState extends State<EventWidget> {
                               borderRadius: BorderRadius.circular(15),
                               child: Container(
                                 height: 130,
-                                color: Colors.purple,
+                                decoration: const BoxDecoration(
+                                  gradient: LinearGradient(
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                    colors: [Colors.purple, Colors.purpleAccent], // You can change these colors to fit your gradient
+                                  ),
+                                ),
                                 child: Expanded(
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                          child: Column(
-                                            children: [
-                                              Row(
-                                                  children: [
-                                                    Expanded(child: Padding(padding: const EdgeInsets.only(left: 15),child: Text(event.name, style: const TextStyle(color: Colors.white),))), // başlık
-                                                    Padding(padding: EdgeInsets.only(right: 15, top: 7),child: ElevatedButton(onPressed: () {
-                                                        Navigator.push(context, MaterialPageRoute(builder: (context) => EventDetails(event: event)),).then((result) {
-                                                          if(result == true){
-                                                            widget.currentUser.joinEvent(event: event);
-                                                            setState(() {
-                                                            });
-                                                          }// EventDetails ekranından bir sonuç geldiğinde burada işlem yapabilirsiniz, ancak bu örnekte bir şey yapılmıyor.
-                                                        });
-      
-                                                    }, child: Text('İncele')))
-                                              ]),
-                                              Row(
-                                                children: [
-                                                  Expanded(child: Flexible(child: Padding(padding: EdgeInsets.only(left: 10),child: Text(event.description, maxLines: 2, overflow: TextOverflow.fade,style: const TextStyle(color: Colors.white),)))),
-                                                  SizedBox(width: 80, child: Padding(padding: EdgeInsets.only(left: 5),child: Text('${event.members.length}/${event.maxMember} kişi')))
-                                                ],
-                                              )
-      
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    )
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: Column(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Expanded(
+                                                  child: Padding(
+                                                    padding: const EdgeInsets.only(left: 15),
+                                                    child: Text(
+                                                      event.name,
+                                                      style: const TextStyle(
+                                                          color: Colors.white,
+                                                          fontWeight: FontWeight.bold,
+                                                          fontSize: 14,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.only(right: 15, top: 7),
+                                                  child: ElevatedButton(
+                                                    onPressed: () {
+                                                      Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                          builder: (context) => EventDetails(event: event),
+                                                        ),
+                                                      ).then((result) {
+                                                        if (result == true) {
+                                                          widget.currentUser.joinEvent(event: event);
+                                                          setState(() {});
+                                                        } // EventDetails ekranından bir sonuç geldiğinde burada işlem yapabilirsiniz, ancak bu örnekte bir şey yapılmıyor.
+                                                      });
+                                                    },
+                                                    child: Text('İncele'),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                Expanded(
+                                                  child: Flexible(
+                                                    child: Padding(
+                                                      padding: EdgeInsets.only(left: 10),
+                                                      child: Text(
+                                                        event.description,
+                                                        maxLines: 2,
+                                                        overflow: TextOverflow.fade,
+                                                        style: const TextStyle(color: Colors.white),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 80,
+                                                  child: Padding(
+                                                    padding: EdgeInsets.only(left: 5),
+                                                    child: Text(
+                                                        '${event.members.length}/${event.maxMember} kişi'),
+                                                  ),
+                                                )
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
+
                             ),
                           ),
                         ),

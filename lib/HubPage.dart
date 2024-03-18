@@ -2,6 +2,9 @@ import 'package:appjamteam39/Settings.dart';
 import 'package:flutter/material.dart';
 import 'EventPage.dart';
 import 'HomePageFiles/HomePage.dart';
+import 'LogicalData/Event.dart';
+import 'LogicalData/Member.dart';
+import 'LogicalData/startDataBase.dart';
 import 'ProfilePage.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,11 +18,23 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 1;
+  List<Member> globalMemberList = [];
+  List<Event> globalEventList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    startDataBase();
+    globalMemberList = getMembers();
+    globalEventList = getEvents().cast<Event>();
+  }
 
   @override
   Widget build(BuildContext context) {
     final tabs = [
       //const EventWidget(),
+      // const ProfileWidget(text: "text"),
+      EventWidget(currentUser: members[5], events: events,members: members),
       const HomeWidget(text: "text"),
       const ProfileWidget(text: "text"),
       // ProfilePage(name: "name", surName: "surName", gender: "gender", email: "email", password: "password"),
