@@ -1,17 +1,29 @@
 import 'package:flutter/material.dart';
-import '../AddNewGezi.dart';
+import '../AddNewGezi.dart'; // Import the necessary file(s) here
 
+// Define a StatelessWidget for EventButton
 class EventButton extends StatelessWidget {
+  // Declare variables for button text and image path
   final String buttonText;
   final String image;
-  const EventButton({super.key, required this.buttonText, required this.image});
+
+  // Constructor for EventButton
+  const EventButton({
+    Key? key,
+    required this.buttonText,
+    required this.image,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    String helper = image;
+    // Container width and height values
+    const double containerWidth = 350.0;
+    const double containerHeight = 100.0;
+
     return Container(
-      width: 350,
-      height: 100, // Adjust the height according to your image size
+      width: containerWidth,
+      height: containerHeight,
+      // Container decoration for button styling
       decoration: BoxDecoration(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(20),
@@ -19,12 +31,14 @@ class EventButton extends StatelessWidget {
       ),
       child: ElevatedButton(
         onPressed: () {
+          // Navigate to another screen when button is pressed
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => GeziWidget(text: "test", image: helper)),
+            MaterialPageRoute(builder: (context) => GeziWidget(text: "test", image: image)),
           );
         },
         style: ElevatedButton.styleFrom(
+          // Button style adjustments
           backgroundColor: Colors.transparent,
           foregroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
@@ -35,16 +49,18 @@ class EventButton extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
+            // Background image for the button
             Image.asset(
               image,
-              fit: BoxFit.cover, // Cover the entire button with the image
+              fit: BoxFit.cover,
             ),
+            // Centered text on top of the image
             Center(
               child: Text(
                 buttonText,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.white, // Set text color to contrast with the background image
+                  color: Colors.white,
                 ),
               ),
             ),

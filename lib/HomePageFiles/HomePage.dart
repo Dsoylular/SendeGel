@@ -1,7 +1,7 @@
-import 'package:appjamteam39/HomePageFiles/EventButton.dart';
 import 'package:flutter/material.dart';
 
 import '../GeziPage.dart';
+import 'EventButton.dart';
 
 class HomeWidget extends StatelessWidget {
   final String text;
@@ -10,13 +10,16 @@ class HomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     List<String> attendedItems = [
-      'Gezi 1', //Örnek katılanacak geziler
+      'Gezi 1', // Example attended events
       'Gezi 2',
       'Gezi 3',
     ];
     List<String> organizedItems = [
-      'Organize 1', //Örnek düzenlenen geziler
+      'Organize 1', // Example organized events
       'Organize 2',
       'Organize 3',
     ];
@@ -38,38 +41,35 @@ class HomeWidget extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 25),
+            SizedBox(height: screenHeight * 0.03),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 15),
+              margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20), // border radius
+                borderRadius: BorderRadius.circular(screenWidth * 0.06),
                 gradient: const LinearGradient(
                   colors: [Colors.deepPurple, Colors.purple],
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                 ),
               ),
-              child: const Padding(
-                padding: EdgeInsets.all(10.0),
+              child: Padding(
+                padding: EdgeInsets.all(screenWidth * 0.025),
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Center(
-                    child: Text(
-                      "Planlanmış Gezilerim",
-                      style: TextStyle(
-                        color: Colors.white, // text color
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
+                  child: Text(
+                    "Planlanmış Gezilerim",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: screenWidth * 0.05,
                     ),
                   ),
                 ),
               ),
             ),
-
-            const SizedBox(height: 10),
+            SizedBox(height: screenHeight * 0.0125),
             SizedBox(
-              height: 200,
+              height: screenHeight * 0.25,
               child: attendedItems.isEmpty
                   ? const Center(child: Text('Planlanmış geziniz yok, eklemek için tıklayın'))
                   : Scrollbar(
@@ -84,42 +84,40 @@ class HomeWidget extends StatelessWidget {
                     final item = attendedItems[index];
                     final img = attendedImages[index];
                     return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
                       child: EventButton(buttonText: item, image: img),
                     );
                   },
                 ),
               ),
             ),
-            const SizedBox(height: 25),
+            SizedBox(height: screenHeight * 0.03),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 15),
+              margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               decoration: BoxDecoration(
-                gradient: const LinearGradient(colors: [Colors.deepPurple, Colors.purple]), // gradient colors
-                borderRadius: BorderRadius.circular(20),
+                gradient: const LinearGradient(colors: [Colors.deepPurple, Colors.purple]),
+                borderRadius: BorderRadius.circular(screenWidth * 0.06),
               ),
-              child: const Padding(
-                padding: EdgeInsets.all(10.0),
+              child: Padding(
+                padding: EdgeInsets.all(screenWidth * 0.025),
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Center(
-                    child: Text(
-                      "Organize Ettiğim Geziler",
-                      style: TextStyle(
-                        color: Colors.white, // text color changed to white for better visibility
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
+                  child: Text(
+                    "Organize Ettiğim Geziler",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: screenWidth * 0.05,
                     ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 10,),
+            SizedBox(height: screenHeight * 0.015),
             SizedBox(
-              height: 200,
+              height: screenHeight * 0.3,
               child: organizedItems.isEmpty
-                  ? const Center(child: Text('Planlanmış geziniz yok, eklemek için tıklayın'))
+                  ? Center(child: Text('Planlanmış geziniz yok, eklemek için tıklayın'))
                   : Scrollbar(
                 controller: organizedItemsController,
                 thumbVisibility: true,
@@ -132,28 +130,28 @@ class HomeWidget extends StatelessWidget {
                     final item = organizedItems[index];
                     final img = organizedImages[index];
                     return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
                       child: EventButton(buttonText: item, image: img),
                     );
                   },
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.04),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
-                  width: 50, // Adjust width as needed
-                  height: 50, // Adjust height as needed
+                  width: screenWidth * 0.12,
+                  height: screenWidth * 0.12,
                   decoration: BoxDecoration(
-                    shape: BoxShape.circle, // Makes the container circular
+                    shape: BoxShape.circle,
                     gradient: const LinearGradient(
                       colors: [Colors.deepPurple, Colors.purpleAccent],
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                     ),
-                    border: Border.all(color: Colors.black, width: 2), // Border color and width
+                    border: Border.all(color: Colors.black, width: 2),
                   ),
                   child: ElevatedButton(
                     onPressed: () {
@@ -163,15 +161,15 @@ class HomeWidget extends StatelessWidget {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.zero, // Remove padding
-                      shape: const CircleBorder(), // Makes the button circular
-                      backgroundColor: Colors.transparent, // Transparent background
-                      foregroundColor: Colors.white, // Text color
+                      padding: EdgeInsets.zero,
+                      shape: const CircleBorder(),
+                      backgroundColor: Colors.transparent,
+                      foregroundColor: Colors.white,
                     ),
                     child: const Icon(Icons.add),
                   ),
                 ),
-                const SizedBox(width: 20),
+                SizedBox(width: screenWidth * 0.04),
               ],
             ),
           ],
