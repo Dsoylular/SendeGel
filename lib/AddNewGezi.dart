@@ -4,6 +4,9 @@ import 'Chat.dart';
 
 class GeziWidget extends StatelessWidget {
   final String text;
+  final String image;
+
+  const GeziWidget({Key? key, required this.text, required this.image}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +56,7 @@ class GeziWidget extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20), // Adjust the radius to your preference
               child: Image.asset(
-                'assets/images/img_1.png',
+                image,
                 fit: BoxFit.cover,
                 width: 300, // Adjust the width and height of the image container as needed
                 height: 200,
@@ -91,7 +94,7 @@ class GeziWidget extends StatelessWidget {
 
           const SizedBox(height: 25),
           Container(
-            color: Colors.purple,
+              color: Colors.purple,
               height: 5,
               width: double.infinity
           ),
@@ -224,6 +227,4 @@ class GeziWidget extends StatelessWidget {
       ),
     );
   }
-
-  const GeziWidget({super.key, required this.text});
 }

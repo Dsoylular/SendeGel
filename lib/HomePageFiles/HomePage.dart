@@ -14,13 +14,21 @@ class HomeWidget extends StatelessWidget {
       'Gezi 1', //Örnek katılanacak geziler
       'Gezi 2',
       'Gezi 3',
-      'Gezi 4',
     ];
     List<String> organizedItems = [
       'Organize 1', //Örnek düzenlenen geziler
       'Organize 2',
       'Organize 3',
-      'Organize 4',
+    ];
+    List<String> attendedImages = [
+      'assets/images/img_1.png',
+      'assets/images/img_2.png',
+      'assets/images/img_3.png',
+    ];
+    List<String> organizedImages = [
+      'assets/images/img_4.png',
+      'assets/images/img_5.png',
+      'assets/images/img_6.png',
     ];
 
     ScrollController attendedItemsController = ScrollController();
@@ -67,13 +75,19 @@ class HomeWidget extends StatelessWidget {
                   : Scrollbar(
                 controller: attendedItemsController,
                 thumbVisibility: true,
-                child: ListView(
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
                   controller: attendedItemsController,
                   shrinkWrap: true,
-                  itemExtent: 55,
-                  children: attendedItems
-                      .map((item) => Center(child: EventButton(buttonText: item)))
-                      .toList(),
+                  itemCount: attendedItems.length,
+                  itemBuilder: (context, index) {
+                    final item = attendedItems[index];
+                    final img = attendedImages[index];
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: EventButton(buttonText: item, image: img),
+                    );
+                  },
                 ),
               ),
             ),
@@ -109,13 +123,19 @@ class HomeWidget extends StatelessWidget {
                   : Scrollbar(
                 controller: organizedItemsController,
                 thumbVisibility: true,
-                child: ListView(
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
                   controller: organizedItemsController,
                   shrinkWrap: true,
-                  itemExtent: 55,
-                  children: organizedItems
-                      .map((item) => Center(child: EventButton(buttonText: item)))
-                      .toList(),
+                  itemCount: organizedItems.length,
+                  itemBuilder: (context, index) {
+                    final item = organizedItems[index];
+                    final img = organizedImages[index];
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: EventButton(buttonText: item, image: img),
+                    );
+                  },
                 ),
               ),
             ),
