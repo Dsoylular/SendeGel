@@ -157,7 +157,7 @@ class HomeWidget extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const NewGeziWidget(text: "text")),
+                        MaterialPageRoute(builder: (context) => AddNewTravelPage()),
                       );
                     },
                     style: ElevatedButton.styleFrom(

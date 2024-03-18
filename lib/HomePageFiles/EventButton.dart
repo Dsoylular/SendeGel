@@ -56,13 +56,24 @@ class EventButton extends StatelessWidget {
             ),
             // Centered text on top of the image
             Center(
-              child: Text(
-                buttonText,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
+              child: Container(
+                height: 30,
+                width: 80,
+                decoration: BoxDecoration(
                   color: Colors.white,
+                  borderRadius: BorderRadius.circular(10.0), // Adjust the value as needed
+                ),
+                child: Center(
+                  child: Text(
+                    buttonText,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
               ),
+
             ),
           ],
         ),
