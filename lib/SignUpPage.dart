@@ -1,4 +1,4 @@
-import 'package:appjamteam39/EntryPage.dart';
+import 'package:appjamteam39/LoginPage.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 class SignUpPage extends StatefulWidget {
