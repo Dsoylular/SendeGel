@@ -14,7 +14,7 @@ void main() {
   globalMemberList = getMembers();
   globalEventList = getEvents();
   // runApp(MyApp(members: globalMemberList,events: globalEventList));
-  runApp(MyApp());
+  runApp(MyApp(currentUser: globalMemberList[14], members: globalMemberList, events: globalEventList,));
 }
 
 List<Member> globalMemberList = [];
@@ -24,16 +24,16 @@ List<Event> globalEventList = [];
 
 
 class MyApp extends StatelessWidget {
-  // List<Member> members;
-  // List<Event> events;
-  // Member currentUser = Member(name: 'system', surname: 'bot', hometown: 'Processor', birthYear: 0, birthMonth: 0, birthDay: 1, point: const LatLng(0,0));
-  // MyApp({super.key, required this.events, required this.members});
-  MyApp({super.key});
+  List<Member> members;
+  List<Event> events;
+  Member currentUser; // 14
+  MyApp({super.key, required this.events, required this.members, required this.currentUser});
+  //MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: EntryPage(),
+      home: EntryPage(events: globalEventList, members: globalMemberList, currentUser: currentUser),
       // home: Scaffold(
       //   body: EventWidget(currentUser: members[5], events: events,members: members,))
     );

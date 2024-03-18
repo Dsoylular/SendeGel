@@ -2,9 +2,16 @@ import 'package:appjamteam39/SignUpPage.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'HubPage.dart';
+import 'package:appjamteam39/LogicalData/Member.dart';
+import 'package:appjamteam39/LogicalData/Event.dart';
+import 'package:appjamteam39/LogicalData/startDataBase.dart';
 
 class EntryPage extends StatefulWidget {
-  const EntryPage({super.key});
+  List<Member> members;
+  List<Event> events;
+  Member currentUser;
+
+  EntryPage({super.key, required this.currentUser, required this.members, required this.events});
 
   @override
   State<StatefulWidget> createState() {
@@ -108,14 +115,10 @@ class _EntryState extends State<EntryPage> {
             SizedBox(height: screenSize.height * (spacingRatio * 3)),
             ElevatedButton(
               onPressed: () {
-                String email = _emailController.text;
-                String password = _passwordController.text;
-                //TODO: BU EMAIL VE PASSWORD DOĞRU MU CHECK YAPILMALI BUNA GÖRE ALT SATIRA GEÇECEK
-
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => HomePage(argument: email)),
+                      builder: (context) => HomePage(currentUser: widget.currentUser, members: members, events: events,)),
                 );
               },
               style: ElevatedButton.styleFrom(

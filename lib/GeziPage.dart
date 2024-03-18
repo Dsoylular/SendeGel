@@ -1,10 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:intl/intl.dart';
 
+import 'LogicalData/Member.dart';
+
 class AddNewTravelPage extends StatefulWidget {
-  const AddNewTravelPage({super.key});
+  Member currenUser;
+  final Function() callback;
+  AddNewTravelPage({super.key, required this.currenUser, required this.callback});
 
   @override
   State<AddNewTravelPage> createState() => _AddNewTravelPageState();
@@ -23,6 +28,10 @@ class _AddNewTravelPageState extends State<AddNewTravelPage> {
   TextEditingController _areaController = TextEditingController();
 
   DateTime _selectedDate = DateTime.now();
+
+  void createNewEvent(){
+    widget.currenUser.createEvent(name: _nameController.text, description: _areaController.text, maxMember: int.parse(_maxPersonController.text), point: const LatLng(41.129374, 32.702395));
+  }
 
   TimeOfDay? selectedTime= TimeOfDay.now();
   @override
@@ -71,7 +80,7 @@ class _AddNewTravelPageState extends State<AddNewTravelPage> {
                     TextFormField(
                       controller: _areaController,
                       decoration:
-                      const InputDecoration(labelText: 'Gezilecek Yer'),
+                      const InputDecoration(labelText: 'Gezi Açıklaması'),
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Lütfen adınızı girin';
@@ -161,6 +170,8 @@ class _AddNewTravelPageState extends State<AddNewTravelPage> {
                 fixedSize: const Size(170, 50)),
             onPressed: (){
               _submitForm;
+              widget.callback();
+              createNewEvent();
               Navigator.pop(context);
             },
             icon: const Icon(Icons.download_done_rounded, color: Colors.white),

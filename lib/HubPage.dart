@@ -8,9 +8,11 @@ import 'LogicalData/startDataBase.dart';
 import 'ProfilePage.dart';
 
 class HomePage extends StatefulWidget {
-  final String argument;
+  List<Member> members;
+  List<Event> events;
+  Member currentUser;
 
-  const HomePage({super.key, required this.argument});
+  HomePage({super.key, required this.currentUser, required this.members, required this.events});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -34,8 +36,8 @@ class _HomePageState extends State<HomePage> {
     final tabs = [
       //const EventWidget(),
       // const ProfileWidget(text: "text"),
-      EventWidget(currentUser: members[5], events: events,members: members),
-      const HomeWidget(text: "text"),
+      EventWidget(currentUser: widget.currentUser, events: events,members: members),
+      HomeWidget(currentUser: widget.currentUser, members: members, events: events,),
       const ProfileWidget(text: "text"),
       // ProfilePage(name: "name", surName: "surName", gender: "gender", email: "email", password: "password"),
     ];

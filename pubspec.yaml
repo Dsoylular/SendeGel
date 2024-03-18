@@ -62,6 +62,15 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/images/askeri_muze.jpg
+    - assets/images/bogazici_unutulmaz.jpg
+    - assets/images/buyuk_ada.jpg
+    - assets/images/daracik_sokaklar.jpg
+    - assets/images/fenerbahceParki.jpg
+    - assets/images/galata.jpg
+    - assets/images/kapaliCarsi.jpg
+    - assets/images/modaSahili.jpg
+    - assets/images/none.jpg
     - assets/images/img.png
     - assets/images/img_1.png
     - assets/images/img_2.png

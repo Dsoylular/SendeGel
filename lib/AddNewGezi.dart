@@ -1,12 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'Chat.dart';
+import 'LogicalData/Event.dart';
 
 class GeziWidget extends StatelessWidget {
+
   final String text;
   final String image;
+  final Event event;
 
-  const GeziWidget({super.key, required this.text, required this.image});
+  const GeziWidget({super.key, required this.text, required this.image, required this.event});
 
   @override
   Widget build(BuildContext context) {
@@ -79,11 +83,10 @@ class GeziWidget extends StatelessWidget {
                 width: 2, // Border width
               ),
             ),
-            child: const Center(
-              child: Text(
-                "Kadıköy Gezisi",
+            child: Center(
+              child: Text(event.name,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -125,7 +128,7 @@ class GeziWidget extends StatelessWidget {
               ),
 
               const SizedBox(width: 30),
-              const Text("Deniz Soylular"),
+              Text('${event.creator.name} ${event.creator.surname}'),
             ],
           ),
           const SizedBox(height: 30),
@@ -143,7 +146,7 @@ class GeziWidget extends StatelessWidget {
                 ),
                 child: const Center(
                   child: Text(
-                    "Gezilecek Yer",
+                    "Gezi Açıklaması",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 14,
@@ -155,7 +158,7 @@ class GeziWidget extends StatelessWidget {
               ),
 
               const SizedBox(width: 30),
-              const Text("Kadıköy"),
+              Flexible(child: Text(event.description, maxLines: 3, overflow: TextOverflow.fade,)),
             ],
           ),
           const SizedBox(height: 30),
@@ -185,7 +188,7 @@ class GeziWidget extends StatelessWidget {
               ),
 
               const SizedBox(width: 30),
-              const Text("19"),
+              Text('${event.members.length}'),
             ],
           ),
           const SizedBox(height: 15),

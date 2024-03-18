@@ -16,13 +16,17 @@ class Member{
   LatLng point;
 
   List<Event> joinedEvent = [];
+  List<Event> createdEvent = [];
 
   void joinEvent({required Event event}){
     event.members.add(this);
     joinedEvent.add(event);
   }
+
   Event createEvent({required String name, required String description, String imagePath = 'assests/images/none.jpg', required int maxMember, required LatLng point}){
-    return Event(name: name, description: description, imagePath: imagePath, creator: this, maxMember: maxMember, point: point);
+    Event newEvent = Event(name: name, description: description, imagePath: imagePath, creator: this, maxMember: maxMember, point: point);
+    createdEvent.add(newEvent);
+    return newEvent;
   }
 
 }

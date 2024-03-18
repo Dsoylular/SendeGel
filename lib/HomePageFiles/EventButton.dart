@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
-import '../AddNewGezi.dart'; // Import the necessary file(s) here
+import '../AddNewGezi.dart';
+import '../LogicalData/Event.dart'; // Import the necessary file(s) here
 
 // Define a StatelessWidget for EventButton
 class EventButton extends StatelessWidget {
   // Declare variables for button text and image path
   final String buttonText;
   final String image;
+  final Event event;
 
   // Constructor for EventButton
   const EventButton({
-    Key? key,
+    super.key,
     required this.buttonText,
     required this.image,
-  }) : super(key: key);
+    required this.event,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +37,7 @@ class EventButton extends StatelessWidget {
           // Navigate to another screen when button is pressed
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => GeziWidget(text: "test", image: image)),
+            MaterialPageRoute(builder: (context) => GeziWidget(text: "test", image: image, event: event)),
           );
         },
         style: ElevatedButton.styleFrom(
@@ -57,8 +60,8 @@ class EventButton extends StatelessWidget {
             // Centered text on top of the image
             Center(
               child: Container(
-                height: 30,
-                width: 80,
+                height: 50,
+                width: 180,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.deepPurple,
@@ -70,6 +73,7 @@ class EventButton extends StatelessWidget {
                 child: Center(
                   child: Text(
                     buttonText,
+                    textAlign: TextAlign.center,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.black,

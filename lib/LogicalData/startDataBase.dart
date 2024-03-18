@@ -146,17 +146,17 @@ void startDataBase() {
 
   Event e1 = tayyip.createEvent(name: 'İstanbul\'un Tarih Kokan Sokakları',
       description: 'İstanbul\'un daracık sokaklarında tarihi bir yolculuğa çıkalım.',
-      imagePath: 'assets/images/daracıkSokaklar.jpg',
+      imagePath: 'assets/images/daracik_sokaklar.jpg',
       maxMember: 4,
       point: const LatLng(41.0357, 28.9370));
   Event e2 = mansur.createEvent(name: 'Boğaz\'ın Büyüleyici Manzarası',
       description: 'Boğaziçi\'nde unutulmaz bir manzara keyfi yapalım.',
-      imagePath: 'assets/images/bogazIciUnutulmazKeyif.jpg',
+      imagePath: 'assets/images/bogazici_unutulmaz.jpg',
       maxMember: 5,
       point: const LatLng(41.0167, 29.0536));
   Event e3 = murat.createEvent(name: 'Tarihi Yarımada Keşfi',
       description: 'İstanbul\'un tarihi yarımadasını keşfe çıkalım.',
-      imagePath: 'assets/images/Buyukada.jpg',
+      imagePath: 'assets/images/buyuk_ada.jpg',
       maxMember: 6,
       point: const LatLng(41.0096, 28.9799));
   Event e4 = mansur.createEvent(name: 'Kapalıçarşı\'da Alışveriş Keyfi',
@@ -176,7 +176,7 @@ void startDataBase() {
       point: const LatLng(41.0259, 28.9744));
   Event e7 = yusuf.createEvent(name: 'İstanbul\'un Adalarında Bisiklet Turu',
       description: 'İstanbul\'un adalarında bisikletle tur atalım.',
-      imagePath: 'assets/images/Buyukada.jpg',
+      imagePath: 'assets/images/buyuk_ada.jpg',
       maxMember: 8,
       point: const LatLng(40.8760, 29.0916));
   Event e8 = emine.createEvent(name: 'İstiklal Caddesi\'nde Gece Yürüyüşü',

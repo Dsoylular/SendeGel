@@ -1,12 +1,30 @@
+import 'package:appjamteam39/LogicalData/Member.dart';
+import 'package:appjamteam39/LogicalData/Event.dart';
+import 'package:appjamteam39/LogicalData/startDataBase.dart';
 import 'package:flutter/material.dart';
-
 import '../GeziPage.dart';
 import 'EventButton.dart';
 
-class HomeWidget extends StatelessWidget {
-  final String text;
 
-  const HomeWidget({super.key, required this.text});
+
+
+class HomeWidget extends StatefulWidget {
+  List<Member> members;
+  List<Event> events;
+  Member currentUser;
+
+  HomeWidget({super.key, required this.currentUser, required this.members, required this.events});
+
+  @override
+  State<HomeWidget> createState() => _HomeWidgetState();
+}
+
+class _HomeWidgetState extends State<HomeWidget> {
+  void myCustomSetState() {
+    setState(() {
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -73,19 +91,19 @@ class HomeWidget extends StatelessWidget {
               child: attendedItems.isEmpty
                   ? const Center(child: Text('Planlanmış geziniz yok, eklemek için tıklayın'))
                   : Scrollbar(
-                controller: attendedItemsController,
-                thumbVisibility: true,
-                  child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  controller: attendedItemsController,
-                  shrinkWrap: true,
-                  itemCount: attendedItems.length,
-                  itemBuilder: (context, index) {
-                    final item = attendedItems[index];
-                    final img = attendedImages[index];
-                    return Padding(
-                      padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
-                      child: EventButton(buttonText: item, image: img),
+                      controller: attendedItemsController,
+                      thumbVisibility: true,
+                      child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      controller: attendedItemsController,
+                      shrinkWrap: true,
+                      itemCount: widget.currentUser.createdEvent.length,//attendedItems.length,
+                      itemBuilder: (context, index) {
+                        final item = widget.currentUser.createdEvent[index].name;
+                        final img = widget.currentUser.createdEvent[index].imagePath;
+                          return Padding(
+                            padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
+                            child: EventButton(buttonText: item, image: img, event: widget.currentUser.createdEvent[index],),
                     );
                   },
                 ),
@@ -125,13 +143,13 @@ class HomeWidget extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   controller: organizedItemsController,
                   shrinkWrap: true,
-                  itemCount: organizedItems.length,
+                  itemCount: widget.currentUser.joinedEvent.length,
                   itemBuilder: (context, index) {
-                    final item = organizedItems[index];
-                    final img = organizedImages[index];
+                    final item = widget.currentUser.joinedEvent[index].name;
+                    final img = widget.currentUser.joinedEvent[index].imagePath;
                     return Padding(
                       padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
-                      child: EventButton(buttonText: item, image: img),
+                      child: EventButton(buttonText: item, image: img, event: widget.currentUser.joinedEvent[index]),
                     );
                   },
                 ),
@@ -157,7 +175,8 @@ class HomeWidget extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AddNewTravelPage()),
+                        MaterialPageRoute(builder: (context) => AddNewTravelPage(currenUser: widget.currentUser,callback: (){setState(() {});},)),
+
                       );
                     },
                     style: ElevatedButton.styleFrom(
