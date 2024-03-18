@@ -1,4 +1,3 @@
-import 'package:appjamteam39/AddNewGezi.dart';
 import 'package:appjamteam39/HomePageFiles/EventButton.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +6,7 @@ import '../GeziPage.dart';
 class HomeWidget extends StatelessWidget {
   final String text;
 
-  const HomeWidget({Key? key, required this.text}) : super(key: key);
+  const HomeWidget({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +22,10 @@ class HomeWidget extends StatelessWidget {
       'Organize 3',
       'Organize 4',
     ];
+
+    ScrollController attendedItemsController = ScrollController();
+    ScrollController organizedItemsController = ScrollController();
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -56,15 +59,16 @@ class HomeWidget extends StatelessWidget {
               ),
             ),
 
-
             const SizedBox(height: 10),
             SizedBox(
               height: 200,
               child: attendedItems.isEmpty
-                  ? Center(child: Container(child: Text('Planlanmış geziniz yok, eklemek için tıklayın')))
+                  ? const Center(child: Text('Planlanmış geziniz yok, eklemek için tıklayın'))
                   : Scrollbar(
+                controller: attendedItemsController,
                 thumbVisibility: true,
                 child: ListView(
+                  controller: attendedItemsController,
                   shrinkWrap: true,
                   itemExtent: 55,
                   children: attendedItems
@@ -100,12 +104,13 @@ class HomeWidget extends StatelessWidget {
             const SizedBox(height: 10,),
             SizedBox(
               height: 200,
-              child: attendedItems.isEmpty
-                  ? Center(child: Container(child: Text('Planlanmış geziniz yok, eklemek için tıklayın')))
-                  // TODO: BURADAKİ ETKİNLİK OLMAYINCA GELEN MESAJ GÜZELLEŞTİRİLEBİLİR
+              child: organizedItems.isEmpty
+                  ? const Center(child: Text('Planlanmış geziniz yok, eklemek için tıklayın'))
                   : Scrollbar(
+                controller: organizedItemsController,
                 thumbVisibility: true,
                 child: ListView(
+                  controller: organizedItemsController,
                   shrinkWrap: true,
                   itemExtent: 55,
                   children: organizedItems
