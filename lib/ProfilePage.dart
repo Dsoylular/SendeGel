@@ -26,7 +26,7 @@ class ProfileWidget extends StatelessWidget {
               const Center(
                 child: CircleAvatar(
                   maxRadius: 100,
-                  backgroundImage: AssetImage('lib/images/img_1.png'),
+                  backgroundImage: AssetImage('assets/images/img.png'),
                 ),
               ),
 

@@ -53,7 +53,7 @@ class GeziWidget extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20), // Adjust the radius to your preference
               child: Image.asset(
-                'lib/images/img.png',
+                'assets/images/img_1.png',
                 fit: BoxFit.cover,
                 width: 300, // Adjust the width and height of the image container as needed
                 height: 200,
