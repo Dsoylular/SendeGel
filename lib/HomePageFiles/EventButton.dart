@@ -55,17 +55,19 @@ class EventButton extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             // Centered text on top of the image
-            Center(
+            Positioned(
+              bottom: 10, // Adjust bottom position as needed
+              left: 0,
+              right: 0,
               child: Container(
                 height: 30,
-                width: 80,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.deepPurple,
                     width: 2,
                   ),
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(10.0), // Adjust the value as needed
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
                 child: Center(
                   child: Text(
@@ -77,7 +79,6 @@ class EventButton extends StatelessWidget {
                   ),
                 ),
               ),
-
             ),
           ],
         ),

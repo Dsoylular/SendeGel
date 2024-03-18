@@ -3,8 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'HubPage.dart';
 
-class EntryPage extends StatefulWidget {
-  const EntryPage({super.key});
+class Loginpage extends StatefulWidget {
+  const Loginpage({super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -12,7 +12,7 @@ class EntryPage extends StatefulWidget {
   }
 }
 
-class _EntryState extends State<EntryPage> {
+class _EntryState extends State<Loginpage> {
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
 // deneme commit
@@ -30,6 +30,7 @@ class _EntryState extends State<EntryPage> {
     super.dispose();
   }
 
+  bool obsourceText = true;
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
@@ -78,6 +79,7 @@ class _EntryState extends State<EntryPage> {
               ),
               child: TextField(
                 controller: _emailController,
+                keyboardType: TextInputType.emailAddress,
                 decoration: const InputDecoration(
                   hintText: 'Email',
                   border: InputBorder.none,
@@ -97,9 +99,19 @@ class _EntryState extends State<EntryPage> {
               ),
               child: TextField(
                 controller: _passwordController,
-                decoration: const InputDecoration(
+                obscureText: obsourceText,
+                decoration: InputDecoration(
                   hintText: 'Password',
                   border: InputBorder.none,
+                  suffixIcon: InkWell(
+                      onTap: () {
+                        setState(() {
+                          obsourceText = !obsourceText;
+                        });
+                      },
+                      child: Icon(obsourceText
+                          ? Icons.visibility_off
+                          : Icons.visibility)),
                   contentPadding: EdgeInsets.zero,
                   prefixIcon: Icon(Icons.key),
                 ),
@@ -112,11 +124,15 @@ class _EntryState extends State<EntryPage> {
                 String password = _passwordController.text;
                 //TODO: BU EMAIL VE PASSWORD DOĞRU MU CHECK YAPILMALI BUNA GÖRE ALT SATIRA GEÇECEK
 
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => HomePage(argument: email)),
-                );
+                if (email.isNotEmpty && password.isNotEmpty) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => HomePage(argument: email)),
+                  );
+                } else {
+                  _showPopup(context);
+                }
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(
@@ -157,8 +173,7 @@ class _EntryState extends State<EntryPage> {
                       ..onTap = () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => SignUpPage()),
+                          MaterialPageRoute(builder: (context) => SignUpPage()),
                         );
                       },
                   ),
@@ -168,6 +183,26 @@ class _EntryState extends State<EntryPage> {
           ],
         ),
       ),
+    );
+  }
+
+  void _showPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Uyarı!'),
+          content: Text('Lütfen boş alan bırakmayınız'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Kapat'),
+            ),
+          ],
+        );
+      },
     );
   }
 }

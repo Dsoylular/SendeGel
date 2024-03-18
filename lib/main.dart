@@ -1,4 +1,4 @@
-import 'package:appjamteam39/EntryPage.dart';
+import 'package:appjamteam39/LoginPage.dart';
 import 'package:appjamteam39/EventPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: EntryPage(),
+      home: Loginpage(),
       // home: Scaffold(
       //   body: EventWidget(currentUser: members[5], events: events,members: members,))
     );
