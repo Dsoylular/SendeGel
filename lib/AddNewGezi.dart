@@ -51,7 +51,7 @@ class GeziWidget extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const SizedBox(height: 40),
+          const SizedBox(height: 20),
           Center(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20), // Adjust the radius to your preference
@@ -63,7 +63,7 @@ class GeziWidget extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 20),
           Container(
             width: 200,
             height: 80,

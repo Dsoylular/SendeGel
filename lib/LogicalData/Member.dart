@@ -21,8 +21,8 @@ class Member{
     event.members.add(this);
     joinedEvent.add(event);
   }
-  Event createEvent({required String name, required String description, required int maxMember, required LatLng point}){
-    return Event(name: name, description: description, creator: this, maxMember: maxMember, point: point);
+  Event createEvent({required String name, required String description, String imagePath = 'assests/images/none.jpg', required int maxMember, required LatLng point}){
+    return Event(name: name, description: description, imagePath: imagePath, creator: this, maxMember: maxMember, point: point);
   }
 
 }

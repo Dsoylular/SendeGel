@@ -146,42 +146,52 @@ void startDataBase() {
 
   Event e1 = tayyip.createEvent(name: 'İstanbul\'un Tarih Kokan Sokakları',
       description: 'İstanbul\'un daracık sokaklarında tarihi bir yolculuğa çıkalım.',
+      imagePath: 'assets/images/daracıkSokaklar.jpg',
       maxMember: 4,
       point: const LatLng(41.0357, 28.9370));
   Event e2 = mansur.createEvent(name: 'Boğaz\'ın Büyüleyici Manzarası',
       description: 'Boğaziçi\'nde unutulmaz bir manzara keyfi yapalım.',
+      imagePath: 'assets/images/bogazIciUnutulmazKeyif.jpg',
       maxMember: 5,
       point: const LatLng(41.0167, 29.0536));
   Event e3 = murat.createEvent(name: 'Tarihi Yarımada Keşfi',
       description: 'İstanbul\'un tarihi yarımadasını keşfe çıkalım.',
+      imagePath: 'assets/images/Buyukada.jpg',
       maxMember: 6,
       point: const LatLng(41.0096, 28.9799));
   Event e4 = mansur.createEvent(name: 'Kapalıçarşı\'da Alışveriş Keyfi',
       description: 'Kapalıçarşı\'da alışveriş yapmak için buluşalım.',
+      imagePath: 'assets/images/kapaliCarsi.jpg',
       maxMember: 4,
       point: const LatLng(41.0105, 28.9688));
   Event e5 = mahmut.createEvent(name: 'Sultanahmet\'te Görkemli Yapılar',
       description: 'Sultanahmet\'te Ayasofya ve Sultanahmet Camii\'ni ziyaret edelim.',
+      imagePath: 'assets/images/img_4.png',
       maxMember: 5,
       point: const LatLng(41.0054, 28.9760));
   Event e6 = recep.createEvent(name: 'Galata Kulesi\'nde Manzara Keyfi',
       description: 'Galata Kulesi\'nde İstanbul manzarasının tadını çıkaralım.',
+      imagePath: 'assets/images/galata.jpg',
       maxMember: 6,
       point: const LatLng(41.0259, 28.9744));
   Event e7 = yusuf.createEvent(name: 'İstanbul\'un Adalarında Bisiklet Turu',
       description: 'İstanbul\'un adalarında bisikletle tur atalım.',
+      imagePath: 'assets/images/Buyukada.jpg',
       maxMember: 8,
       point: const LatLng(40.8760, 29.0916));
   Event e8 = emine.createEvent(name: 'İstiklal Caddesi\'nde Gece Yürüyüşü',
       description: 'İstiklal Caddesi\'nde gece yürüyüşü yapalım.',
+      imagePath: 'assets/images/img_1.png',
       maxMember: 4,
       point: const LatLng(41.0340, 28.9799));
   Event e9 = ahmet.createEvent(name: 'İstanbul\'un Meşhur Lezzetleri Turu',
       description: 'İstanbul\'un en ünlü restoranlarında lezzet turu yapalım.',
+      imagePath: 'assets/images/img_4.png',
       maxMember: 6,
       point: const LatLng(41.0082, 28.9784));
   Event e10 = ekrem.createEvent(name: 'Ortaköy\'de Boğaz Köprüsü Manzarası',
       description: 'Ortaköy\'de Boğaz Köprüsü\'nün manzarasını izleyelim.',
+      imagePath: 'assets/images/img_6.png',
       maxMember: 5,
       point: const LatLng(41.0524, 29.0123));
   events.add(e1);

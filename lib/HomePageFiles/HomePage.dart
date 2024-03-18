@@ -75,7 +75,7 @@ class HomeWidget extends StatelessWidget {
                   : Scrollbar(
                 controller: attendedItemsController,
                 thumbVisibility: true,
-                child: ListView.builder(
+                  child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   controller: attendedItemsController,
                   shrinkWrap: true,
