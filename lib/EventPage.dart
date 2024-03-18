@@ -41,7 +41,7 @@ class _EventWidgetState extends State<EventWidget> {
             ListView(
               children: [
             for (Event event in widget.events)
-
+              const Text('Hello'),
               /*Row(
                 children: [
                   Column(
@@ -98,8 +98,7 @@ class _MapState extends State<Map> {
       markers: {
         for (Event event in widget.events)
           Marker(
-            markerId: MarkerId(event.name),
-            // üzgünüm ama her Event birbirinden ayrı bir isme sahip olmalı
+            markerId: MarkerId(event.name), // üzgünüm ama her Event birbirinden ayrı bir isme sahip olmalı
             position: event.point,
             icon: BitmapDescriptor.defaultMarker,
             infoWindow: InfoWindow(
@@ -142,43 +141,38 @@ class EventDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text(event.name),
-      content: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(event.name),
-            Text(
-              event.description,
-              overflow: TextOverflow.fade,
-              maxLines: 2,
-            ),
-            Row(
-              children: [
-                const Flexible(child: Text('Ekip Üyeleri:')),
-                Text('${event.members}/${event.maxMember}', textAlign: TextAlign.right,)
-              ],
-            ),
-            ListView(
-              children: [
-                for (Member member in event.members)
-                  Row(
-                    children: [
-                      Text('${member.name} ${member.surname}'),
-                      Flexible(
-                        child: IconButton(
-                          onPressed: () {
-                            /*MemberDetail*/
-                          },
-                          icon: const Icon(Icons.account_box),
-                          padding: const EdgeInsets.only(right: 10),
-                        ),
-                      )
-                    ],
-                  )
-              ],
-            ),
-          ],
-        ),
+      content: Column(
+        children: [
+          Text(event.name),
+          Text(
+            event.description,
+            overflow: TextOverflow.fade,
+            maxLines: 2,
+          ),
+          Row(
+            children: [
+              const Text('Ekip Üyeleri:'),
+              Text('${event.members}/${event.maxMember}')
+            ],
+          ),
+          ListView(
+            children: [
+              for (Member member in event.members)
+                Row(
+                  children: [
+                    Text('${member.name} ${member.surname}'),
+                    IconButton(
+                      onPressed: () {
+                        /*MemberDetail*/
+                      },
+                      icon: const Icon(Icons.account_box),
+                      padding: const EdgeInsets.only(right: 10),
+                    )
+                  ],
+                )
+            ],
+          ),
+        ],
       ),
       actions: [
         TextButton(
